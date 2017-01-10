@@ -4,15 +4,8 @@ import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 
 export const styles = {
-  list: {
-    margin: '20px 0 20px 0',
-  },
-  title: {
-    fontSize: '18px',
-    fontWeight: 'bold',
-  },
-  item: {
-    marginLeft: '10px',
+  general: {
+    float: 'right'
   },
 };
 
@@ -31,14 +24,14 @@ export default class PropTypesList extends Component {
     const { propTypes, ...rest } = this.props;
 
     return (
-      <div style={styles.general} {...rest}>
-        <RaisedButton label="Show all propTypes" onClick={this.handleOpen} />
+      <div style={styles.general}{...rest}>
+        <RaisedButton label="show props" primary onClick={this.handleOpen} />
         <Dialog
-          title="Dialog With Actions"
+          title="All props"
           actions={[
             <FlatButton
               label="Cancel"
-              primary={true}
+              secondary
               onClick={this.handleClose}
             />
           ]}
@@ -48,7 +41,7 @@ export default class PropTypesList extends Component {
           <div style={styles.list}>
             <div style={styles.title}>Props:</div>
             {
-              Object.keys(propTypes).map(key => <div key={key} style={styles.item}>{key}: {JSON.stringify(propTypes[key])}</div>)
+              Object.keys(propTypes).map(key => <div key={key}>{key}: {JSON.stringify(propTypes[key])}</div>)
             }
           </div>
         </Dialog>

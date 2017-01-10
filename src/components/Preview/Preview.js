@@ -17,6 +17,7 @@ export const styles = {
     width: '600px',
     borderRadius: '10px',
     backgroundColor: '#d8d8d8',
+    position: 'relative',
     padding: '20px',
     boxSizing: 'border-box',
   },
