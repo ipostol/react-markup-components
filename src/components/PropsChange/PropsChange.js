@@ -23,7 +23,7 @@ export default class PropsChange extends Component {
       return (
         <SelectField onChange={(e, number, value) => onPropsChange(field, value)}>
           {
-            value.map(item => <MenuItem value={item} primaryText={item} />)
+            type.map(item => <MenuItem value={item} primaryText={item} />)
           }
         </SelectField>
       );
