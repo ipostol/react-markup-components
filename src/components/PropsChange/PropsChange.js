@@ -4,6 +4,12 @@ import Toggle from 'material-ui/Toggle';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
+export const styles = {
+  field: {
+    margin: '20px 0',
+  },
+};
+
 export default class PropsChange extends Component {
 
   static propTypes = {
@@ -23,7 +29,7 @@ export default class PropsChange extends Component {
       return (
         <SelectField onChange={(e, number, value) => onPropsChange(field, value)}>
           {
-            type.map(item => <MenuItem value={item} primaryText={item} />)
+            type.map((item, index) => <MenuItem value={item} primaryText={item} key={index} />)
           }
         </SelectField>
       );
@@ -59,7 +65,7 @@ export default class PropsChange extends Component {
     return (
       <div>
         {
-          Object.keys(propTypes).map(key => this.checkType(key))
+          Object.keys(propTypes).map(key => <div style={styles.field}>{this.checkType(key)}</div>)
         }
       </div>
     );
