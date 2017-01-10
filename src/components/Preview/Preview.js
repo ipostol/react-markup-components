@@ -41,6 +41,8 @@ export default class Preview extends Component {
     };
   }
 
+  onPropsChange = (field, value) => this.setState({ [field]: value });
+
   /**
    * @return {ReactElemen}
    */
@@ -60,6 +62,7 @@ export default class Preview extends Component {
           }
           <C {...this.state.props} />
           <PropTypesList propTypes={children.type.__PT__} />
+          <PropsChange propTypes={children.type.__PT__} props={this.state.props} onPropsChange={this.onPropsChange} />
         </div>
       </div>
 
