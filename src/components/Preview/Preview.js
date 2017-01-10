@@ -12,6 +12,9 @@ export const styles = {
     display: 'flex',
     justifyContent: 'center',
   },
+  content: {
+    width: '600px',
+  },
 };
 
 /**
@@ -37,14 +40,16 @@ export default class Preview extends Component {
     return (
 
       <div style={styles.general}>
-        {
-          description && <Description>{description}</Description>
-        }
-        {
-          children
-        }
-        <div>In this section we will change props in fly mode</div>
-        <div>{JSON.stringify(children.type.__PT__, null, '\t')}</div>
+        <div style={styles.content}>
+          {
+            description && <Description>{description}</Description>
+          }
+          {
+            children
+          }
+          <div>In this section we will change props in fly mode</div>
+          <div>{JSON.stringify(children.type.__PT__, null, '\t')}</div>
+        </div>
       </div>
 
     );
