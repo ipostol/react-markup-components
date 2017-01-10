@@ -32,14 +32,14 @@ export default class PropTypesList extends Component {
 
     return (
       <div style={styles.general} {...rest}>
-        <RaisedButton label="Show all propTypes" onTouchTap={this.handleOpen} />
+        <RaisedButton label="Show all propTypes" onClick={this.handleOpen} />
         <Dialog
           title="Dialog With Actions"
           actions={[
             <FlatButton
               label="Cancel"
               primary={true}
-              onTouchTap={this.handleClose}
+              onClick={this.handleClose}
             />
           ]}
           modal
