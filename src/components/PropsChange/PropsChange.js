@@ -43,7 +43,7 @@ export default class PropsChange extends Component {
       return (
         <TextField
           hintText={field}
-          value={value},
+          value={value}
           onChange={(e, value) => onPropsChange(field, value)}
         />
       );
