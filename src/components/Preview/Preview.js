@@ -44,7 +44,7 @@ export default class Preview extends Component {
           children
         }
         <div>In this section we will change props in fly mode</div>
-        <div>{JSON.stringify(children.type.__PT__, null, ' ')}</div>
+        <div>{JSON.stringify(children.type.__PT__, null, '\t')}</div>
       </div>
 
     );
