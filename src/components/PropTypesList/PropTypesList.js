@@ -1,12 +1,15 @@
 import React from 'react';
 
 export const styles = {
-  title: {},
   list: {
-
+    margin: '20px 0 20px 0',
+  },
+  title: {
+    fontSize: '18px',
+    fontWeight: 'bold',
   },
   item: {
-
+    marginLeft: '10px',
   },
 };
 
