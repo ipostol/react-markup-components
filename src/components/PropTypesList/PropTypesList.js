@@ -38,8 +38,7 @@ export default class PropTypesList extends Component {
           modal
           open={this.state.isOpen}
         >
-          <div style={styles.list}>
-            <div style={styles.title}>Props:</div>
+          <div>
             {
               Object.keys(propTypes).map(key => <div key={key}>{key}: {JSON.stringify(propTypes[key])}</div>)
             }
