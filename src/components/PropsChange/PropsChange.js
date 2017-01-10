@@ -7,7 +7,7 @@ import MenuItem from 'material-ui/MenuItem';
 export const styles = {
   general: {
     margin: '20px 0',
-  }
+  },
   toggleField: {
     margin: '20px 0',
   },
