@@ -43,7 +43,7 @@ export default class PropsChange extends Component {
       return (
         <TextField
           hintText={field}
-          value={value}
+          value={value || ''}
           onChange={(e, value) => onPropsChange(field, value)}
         />
       );
@@ -59,9 +59,7 @@ export default class PropsChange extends Component {
     return (
       <div>
         {
-          Object.keys(propTypes).map((key) => (
-            <div key={key}>{key}, {propTypes[key]}, {props[key]}</div>
-          ))
+          Object.keys(propTypes).map(key => checkType(key))
         }
       </div>
     );
