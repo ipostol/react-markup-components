@@ -10,7 +10,7 @@ export const styles = {
     bottom: '0',
     padding: '40px',
     display: 'flex',
-    alignItems: 'center',
+    justifyContent: 'center',
   },
 };
 
@@ -37,8 +37,12 @@ export default class Preview extends Component {
     return (
 
       <div style={styles.general}>
-        <Description>{description}</Description>
-        {children}
+        {
+          description && <Description>{description}</Description>
+        }
+        {
+          children
+        }
         <h2>In this section we will change props in fly mode</h2>
       </div>
 
