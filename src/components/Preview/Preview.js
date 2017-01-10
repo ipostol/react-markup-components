@@ -34,7 +34,7 @@ export default class Preview extends Component {
     children: PropTypes.any,
   };
 
-  contructor(props) {
+  constructor(props) {
     super();
     this.state = {
       props: props.children.props,
