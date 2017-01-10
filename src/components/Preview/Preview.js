@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Description from '../Description';
 
 export const styles = {
@@ -11,7 +11,7 @@ export const styles = {
  * get component preview, by this component you can change props in fly mode
  * and can change background layer and view theme action
  */
-export default class Preview extends React.Comoponent {
+export default class Preview extends Component {
 
   static propTypes = {
     description: PropTypes.string,
