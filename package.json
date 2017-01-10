@@ -2,7 +2,7 @@
   "name": "react-markup-components",
   "version": "1.0.0",
   "description": "Subcomponents for react-markup enterprise",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "./node_modules/babel-cli/bin/babel.js src --out-dir lib",
     "prepublish": "npm run build"
