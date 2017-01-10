@@ -59,8 +59,8 @@ export default class PropsChange extends Component {
     return (
       <div>
         {
-          Object.keys(props).map((key) => (
-            <div>{key}, {props[key]}, {propTypes[key]}</div>
+          Object.keys(propTypes).map((key) => (
+            <div key={key}>{key}, {propTypes[key]}, {props[key]}</div>
           ))
         }
       </div>
