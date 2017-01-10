@@ -30,6 +30,7 @@ export const styles = {
   },
   layer: {
     margin: '20px 0',
+    padding: '10px',
   },
 };
 
@@ -70,10 +71,10 @@ export default class Preview extends Component {
           {
             description && <Description>{description}</Description>
           }
-          <div style={styles.layer}>
+          <div style={{ ...styles.layer, '#fff' }}>
             <C {...this.state.props} />
           </div>
-          <div style={styles.layer}>
+          <div style={{ ...styles.layer, backgroundColor: '#000' }}>
             <C {...this.state.props} />
           </div>
           <div style={styles.divider} />
