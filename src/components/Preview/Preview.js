@@ -22,6 +22,15 @@ export const styles = {
     padding: '20px',
     boxSizing: 'border-box',
   },
+  divider: {
+    width: '100%',
+    height: '1px',
+    backgroundColor: '1px',
+    margin: '10px',
+  },
+  layer: {
+    margin: '20px 0',
+  },
 };
 
 /**
@@ -68,6 +77,7 @@ export default class Preview extends Component {
             <C {...this.state.props} />
           </div>
           <PropTypesList propTypes={children.type.__PT__} />
+          <div style={styles.divider} />
           <PropsChange propTypes={children.type.__PT__} props={this.state.props} onPropsChange={this.onPropsChange} />
         </div>
       </div>
