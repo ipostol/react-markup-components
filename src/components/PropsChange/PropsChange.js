@@ -28,7 +28,7 @@ export default class PropsChange extends Component {
         </SelectField>
       );
 
-    } else if (type === boolean) {
+    } else if (type === 'boolean') {
 
       return (
         <Toggle
