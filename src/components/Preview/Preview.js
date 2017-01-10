@@ -25,8 +25,8 @@ export const styles = {
   divider: {
     width: '100%',
     height: '1px',
-    backgroundColor: '1px',
-    margin: '10px',
+    backgroundColor: '#000',
+    margin: '10px 0',
   },
   layer: {
     margin: '20px 0',
@@ -70,10 +70,10 @@ export default class Preview extends Component {
           {
             description && <Description>{description}</Description>
           }
-          <div>
+          <div style={styles.layer}>
             <C {...this.state.props} />
           </div>
-          <div>
+          <div style={styles.layer}>
             <C {...this.state.props} />
           </div>
           <PropTypesList propTypes={children.type.__PT__} />
