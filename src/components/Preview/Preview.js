@@ -32,7 +32,7 @@ export default class Preview extends Component {
 
     const { description, children } = this.props;
 
-    console.log(children, '||||');
+    console.log(children.type.__PT__, '||||');
 
     return (
 
@@ -43,7 +43,8 @@ export default class Preview extends Component {
         {
           children
         }
-        <h2>In this section we will change props in fly mode</h2>
+        <div>In this section we will change props in fly mode</div>
+        <div>{JSON.stringify(children.type.__PT__)}</div>
       </div>
 
     );
