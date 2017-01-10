@@ -34,14 +34,22 @@ export default class Preview extends Component {
     children: PropTypes.any,
   };
 
+  contructor(props) {
+    super();
+    this.state = {
+      props: props.children.props,
+    };
+  }
+
   /**
    * @return {ReactElemen}
    */
   render() {
 
     const { description, children } = this.props;
+    console.log(children);
 
-    console.log(children.type.__PT__, '||||');
+    const C = children.type;
 
     return (
 
@@ -50,9 +58,7 @@ export default class Preview extends Component {
           {
             description && <Description>{description}</Description>
           }
-          {
-            children
-          }
+          <C {...this.state.props} />
           <PropTypesList propTypes={children.type.__PT__} />
         </div>
       </div>
