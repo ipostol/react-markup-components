@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Description from '../Description';
+import PropTypesList from '../PropTypesList';
 
 export const styles = {
   general: {
@@ -14,6 +15,10 @@ export const styles = {
   },
   content: {
     width: '600px',
+    borderRadius: '10px',
+    backgroundColor: '#d8d8d8',
+    padding: '20px',
+    boxSizing: 'border-box',
   },
 };
 
