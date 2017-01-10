@@ -42,7 +42,7 @@ export default class Preview extends Component {
     };
   }
 
-  onPropsChange = (field, value) => this.setState({ [field]: value });
+  onPropsChange = (field, value) => this.setState({ props: { ...this.state.props, [field]: value } });
 
   /**
    * @return {ReactElemen}
