@@ -4,9 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 
 export const styles = {
-  general: {
-    float: 'right'
-  },
+  general: {},
 };
 
 export default class PropTypesList extends Component {

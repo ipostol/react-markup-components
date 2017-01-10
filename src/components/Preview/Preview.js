@@ -76,9 +76,9 @@ export default class Preview extends Component {
           <div style={styles.layer}>
             <C {...this.state.props} />
           </div>
-          <PropTypesList propTypes={children.type.__PT__} />
           <div style={styles.divider} />
           <PropsChange propTypes={children.type.__PT__} props={this.state.props} onPropsChange={this.onPropsChange} />
+          <PropTypesList propTypes={children.type.__PT__} />
         </div>
       </div>
 
