@@ -3,7 +3,14 @@ import Description from '../Description';
 
 export const styles = {
   general: {
-    margin: '30px',
+    position: 'absolute',
+    left: '0',
+    right: '0',
+    top: '0',
+    bottom: '0',
+    padding: '40px',
+    display: 'flex',
+    alignItems: 'center',
   },
 };
 
@@ -19,7 +26,7 @@ export default class Preview extends Component {
   };
 
   /**
-   * @return {ReactMarkup}
+   * @return {ReactElemen}
    */
   render() {
 
