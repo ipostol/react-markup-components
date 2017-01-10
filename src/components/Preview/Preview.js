@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Description from '../Description';
 import PropTypesList from '../PropTypesList';
+import PropsChange from '../PropsChange';
 
 export const styles = {
   general: {
