@@ -5,7 +5,10 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
 export const styles = {
-  field: {
+  general: {
+    margin: '20px 0',
+  }
+  toggleField: {
     margin: '20px 0',
   },
 };
@@ -40,6 +43,7 @@ export default class PropsChange extends Component {
         <Toggle
           label={field}
           toggled={!!value}
+          style={styles.toggleField}
           onToggle={() => onPropsChange(field, !value)}
         />  
       );
@@ -63,9 +67,9 @@ export default class PropsChange extends Component {
     const { propTypes, props } = this.props;
 
     return (
-      <div>
+      <div style={styles.general}>
         {
-          Object.keys(propTypes).map(key => <div style={styles.field}>{this.checkType(key)}</div>)
+          Object.keys(propTypes).map(key => <div>{this.checkType(key)}</div>)
         }
       </div>
     );
