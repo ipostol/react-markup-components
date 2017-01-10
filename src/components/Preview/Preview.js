@@ -71,7 +71,7 @@ export default class Preview extends Component {
           {
             description && <Description>{description}</Description>
           }
-          <div style={{ ...styles.layer, '#fff' }}>
+          <div style={{ ...styles.layer, backgroundColor: '#fff' }}>
             <C {...this.state.props} />
           </div>
           <div style={{ ...styles.layer, backgroundColor: '#000' }}>
