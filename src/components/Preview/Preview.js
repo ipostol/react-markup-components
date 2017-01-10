@@ -15,7 +15,7 @@ export default class Preview extends React.Comoponent {
 
   static propTypes = {
     description: PropTypes.string,
-    Component: PropTypes.element,
+    children: PropTypes.any,
   };
 
   /**
@@ -23,15 +23,15 @@ export default class Preview extends React.Comoponent {
    */
   render() {
 
-    const { description, Component } = this.props;
+    const { description, children } = this.props;
 
-    console.log(Component, Component.props, '||||');
+    console.log(children, '||||');
 
     return (
 
       <div style={styles.general}>
         <Description>{description}</Description>
-        <Component />
+        {children}
         <h2>In this section we will change props in fly mode</h2>
       </div>
 
