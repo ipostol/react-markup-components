@@ -61,7 +61,12 @@ export default class Preview extends Component {
           {
             description && <Description>{description}</Description>
           }
-          <C {...this.state.props} />
+          <div>
+            <C {...this.state.props} />
+          </div>
+          <div>
+            <C {...this.state.props} />
+          </div>
           <PropTypesList propTypes={children.type.__PT__} />
           <PropsChange propTypes={children.type.__PT__} props={this.state.props} onPropsChange={this.onPropsChange} />
         </div>
