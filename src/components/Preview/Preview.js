@@ -35,9 +35,9 @@ export default class Preview extends Component {
     };
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState({ props: nextProps.children.props });
-  // }
+  componentWillReceiveProps(nextProps) {
+    this.setState({ props: nextProps.children.props });
+  }
 
   onPropsChange = (field, value) => this.setState({ props: { ...this.state.props, [field]: value } });
 
