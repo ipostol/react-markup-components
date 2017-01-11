@@ -42,13 +42,11 @@ export default class Preview extends Component {
   onPropsChange = (field, value) => this.setState({ props: { ...this.state.props, [field]: value } });
 
   /**
-   * @return {ReactElemen}
+   * @return {ReactElement}
    */
   render() {
 
     const { description, children } = this.props;
-    console.log(children);
-
     const C = children.type;
 
     return (
@@ -56,10 +54,10 @@ export default class Preview extends Component {
         {
           description && <Description>{description}</Description>
         }
-        <div style={{ ...styles.layer, backgroundColor: '#fff' }}>
+        <div className="theme_white" style={{ ...styles.layer, backgroundColor: '#fff' }}>
           <C {...this.state.props} />
         </div>
-        <div style={{ ...styles.layer, backgroundColor: '#000' }}>
+        <div className="theme_black" style={{ ...styles.layer, backgroundColor: '#000' }}>
           <C {...this.state.props} />
         </div>
         <div style={styles.divider} />
