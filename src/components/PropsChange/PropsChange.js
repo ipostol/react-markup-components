@@ -69,7 +69,7 @@ export default class PropsChange extends Component {
     return (
       <div style={styles.general}>
         {
-          Object.keys(propTypes).map(key => <div>{this.checkType(key)}</div>)
+          Object.keys(propTypes).map(key => <div key={key}>{this.checkType(key)}</div>)
         }
       </div>
     );
