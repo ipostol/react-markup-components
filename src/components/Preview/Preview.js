@@ -1,27 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import Skin from '../Skin';
 import Description from '../Description';
 import PropTypesList from '../PropTypesList';
 import PropsChange from '../PropsChange';
 
 export const styles = {
-  general: {
-    position: 'absolute',
-    left: '0',
-    right: '0',
-    top: '0',
-    bottom: '0',
-    padding: '40px',
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  content: {
-    width: '600px',
-    borderRadius: '10px',
-    backgroundColor: '#d8d8d8',
-    position: 'relative',
-    padding: '20px',
-    boxSizing: 'border-box',
-  },
   divider: {
     width: '100%',
     height: '1px',
@@ -65,24 +48,20 @@ export default class Preview extends Component {
     const C = children.type;
 
     return (
-
-      <div style={styles.general}>
-        <div style={styles.content}>
-          {
-            description && <Description>{description}</Description>
-          }
-          <div style={{ ...styles.layer, backgroundColor: '#fff' }}>
-            <C {...this.state.props} />
-          </div>
-          <div style={{ ...styles.layer, backgroundColor: '#000' }}>
-            <C {...this.state.props} />
-          </div>
-          <div style={styles.divider} />
-          <PropsChange propTypes={children.type.__PT__} props={this.state.props} onPropsChange={this.onPropsChange} />
-          <PropTypesList propTypes={children.type.__PT__} />
+      <Skin>
+        {
+          description && <Description>{description}</Description>
+        }
+        <div style={{ ...styles.layer, backgroundColor: '#fff' }}>
+          <C {...this.state.props} />
         </div>
-      </div>
-
+        <div style={{ ...styles.layer, backgroundColor: '#000' }}>
+          <C {...this.state.props} />
+        </div>
+        <div style={styles.divider} />
+        <PropsChange propTypes={children.type.__PT__} props={this.state.props} onPropsChange={this.onPropsChange} />
+        <PropTypesList propTypes={children.type.__PT__} />
+      </Skin>
     );
 
   }

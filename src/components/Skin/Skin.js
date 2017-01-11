@@ -1,0 +1,32 @@
+import React from 'react';
+
+export const styles = {
+  general: {
+    position: 'absolute',
+    left: '0',
+    right: '0',
+    top: '0',
+    bottom: '0',
+    padding: '40px',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  content: {
+    width: '600px',
+    borderRadius: '10px',
+    position: 'relative',
+    padding: '20px',
+    border: '1px solid #000',
+    boxSizing: 'border-box',
+  },
+};
+
+export default ({ children, ...rest }) => (
+  <div style={styles.general} {...rest}>
+    <div style={styles.content}>
+      {
+        children
+      }
+    </div>
+  </div>
+);
