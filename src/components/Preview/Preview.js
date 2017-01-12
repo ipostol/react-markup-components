@@ -60,10 +60,10 @@ export default class Preview extends Component {
         {
           description && <Description>{description}</Description>
         }
-        <div className="theme_white" style={{ ...styles.layer, backgroundColor: '#fff' }}>
+        <div className="theme_white" style={{ ...styles.layer, backgroundColor: '#fffffe' }}>
           <C {...this.state.props} />
         </div>
-        <div className="theme_black" style={{ ...styles.layer, backgroundColor: '#000' }}>
+        <div className="theme_black" style={{ ...styles.layer, backgroundColor: '#2a303e' }}>
           <C {...this.state.props} />
         </div>
         <div style={styles.divider} />
