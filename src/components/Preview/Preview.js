@@ -68,12 +68,12 @@ export default class Preview extends Component {
         </div>
         <div style={styles.divider} />
         <div style={styles.flex}>
-          <PropsChange propTypes={children.type.__PT__} props={this.state.props} onPropsChange={this.onPropsChange} />
+          <PropsChange propTypes={children.type.propList} props={this.state.props} onPropsChange={this.onPropsChange} />
           <div style={styles.aside}>
             {aside}
           </div>
         </div>
-        <PropTypesList propTypes={children.type.__PT__} />
+        <PropTypesList propTypes={children.type.propList} />
       </Skin>
     );
 
