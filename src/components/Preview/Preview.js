@@ -45,9 +45,11 @@ export default class Preview extends Component {
 
   componentWillReceiveProps(nextProps) {
 
-    const diff = diffObject(this.props, nextProps);
+    const diff = diffObject(this.props.children.props, nextProps.children.props);
 
     const nextStateProps = { ...this.state.props };
+
+    console.log(diff, '||||');
 
     Object.keys(diff).forEach(key => {
 
