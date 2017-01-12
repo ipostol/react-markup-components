@@ -15,6 +15,12 @@ export const styles = {
     margin: '20px 0',
     padding: '10px',
   },
+  flex: {
+    display: 'flex',
+  },
+  aside: {
+    margin: '20px',
+  },
 };
 
 /**
@@ -61,9 +67,11 @@ export default class Preview extends Component {
           <C {...this.state.props} />
         </div>
         <div style={styles.divider} />
-        <PropsChange propTypes={children.type.__PT__} props={this.state.props} onPropsChange={this.onPropsChange} />
-        <div>
-          {aside}
+        <div style={styles.flex}>
+          <PropsChange propTypes={children.type.__PT__} props={this.state.props} onPropsChange={this.onPropsChange} />
+          <div style={styles.aside}>
+            {aside}
+          </div>
         </div>
         <PropTypesList propTypes={children.type.__PT__} />
       </Skin>
