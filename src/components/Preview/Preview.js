@@ -3,6 +3,7 @@ import Skin from '../Skin';
 import Description from '../Description';
 import PropTypesList from '../PropTypesList';
 import PropsChange from '../PropsChange';
+import { LIGHT_COLOR, DARK_COLOR } from '../../consts';
 
 export const styles = {
   divider: {
@@ -60,10 +61,10 @@ export default class Preview extends Component {
         {
           description && <Description>{description}</Description>
         }
-        <div className="theme_white" style={{ ...styles.layer, backgroundColor: '#fffffe' }}>
+        <div style={{ ...styles.layer, backgroundColor: LIGHT_COLOR }}>
           <C {...this.state.props} />
         </div>
-        <div className="theme_black" style={{ ...styles.layer, backgroundColor: '#2a303e' }}>
+        <div style={{ ...styles.layer, backgroundColor: DARK_COLOR }}>
           <C {...this.state.props} />
         </div>
         <div style={styles.divider} />
