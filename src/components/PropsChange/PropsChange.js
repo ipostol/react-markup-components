@@ -48,6 +48,16 @@ export default class PropsChange extends Component {
         />  
       );
 
+    } else if (type === 'number') {
+
+      return (
+        <TextField
+          hintText={field}
+          value={value || ''}
+          onChange={(e, value) => onPropsChange(field, parseInt(value, 10) || '')}
+        />
+      );
+
     } else {
 
       return (
