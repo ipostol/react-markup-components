@@ -4,6 +4,7 @@ import Description from '../Description';
 import PropTypesList from '../PropTypesList';
 import PropsChange from '../PropsChange';
 import { LIGHT_COLOR, DARK_COLOR } from '../../consts';
+import { diffObject } from '../../utils';
 
 export const styles = {
   divider: {
@@ -43,7 +44,19 @@ export default class Preview extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ props: nextProps.children.props });
+
+    const diff = diffObject(this.props, nextProps);
+
+    const nextStateProps = { ...this.state.props };
+
+    Object.keys(diff).forEach(key => {
+
+      nextStateProps[key] = diff[key];
+
+    });
+
+    this.setState({ props: nextStateProps });
+
   }
 
   onPropsChange = (field, value) => this.setState({ props: { ...this.state.props, [field]: value } });
