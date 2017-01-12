@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { Component, PropTypes } from 'react';
 import Skin from '../Skin';
 import Description from '../Description';
@@ -33,7 +35,7 @@ export default class Preview extends Component {
 
   static propTypes = {
     description: PropTypes.string,
-    children: PropTypes.any,
+    children: PropTypes.node,
   };
 
   constructor(props) {
@@ -48,8 +50,6 @@ export default class Preview extends Component {
     const diff = diffObject(this.props.children.props, nextProps.children.props);
 
     const nextStateProps = { ...this.state.props };
-
-    console.log(diff, '||||');
 
     Object.keys(diff).forEach(key => {
 

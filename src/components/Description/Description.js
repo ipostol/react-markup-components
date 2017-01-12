@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+/* eslint-disable import/no-unresolved, import/extensions */
+
+import React from 'react';
 
 export const style = {
   fontSize: '20px',
@@ -6,6 +8,6 @@ export const style = {
   textAlign: 'center',
 };
 
-export default (props) => (
+export default props => (
   <div style={style} {...props} />
 );

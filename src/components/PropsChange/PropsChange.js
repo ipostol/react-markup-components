@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { Component, PropTypes } from 'react';
 import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';

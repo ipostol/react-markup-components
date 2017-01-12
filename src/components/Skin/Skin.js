@@ -1,4 +1,6 @@
-import React from 'react';
+/* eslint-disable import/no-unresolved, import/extensions */
+
+import React, { PropTypes } from 'react';
 
 export const styles = {
   general: {
@@ -21,7 +23,7 @@ export const styles = {
   },
 };
 
-export default ({ children, ...rest }) => (
+const Skin = ({ children, ...rest }) => (
   <div style={styles.general} {...rest}>
     <div style={styles.content}>
       {
@@ -30,3 +32,9 @@ export default ({ children, ...rest }) => (
     </div>
   </div>
 );
+
+Skin.propTypes = {
+  children: PropTypes.node,
+};
+
+export default Skin;

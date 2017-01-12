@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -38,7 +40,9 @@ export default class PropTypesList extends Component {
         >
           <div>
             {
-              Object.keys(propTypes).map(key => <div key={key}>{key}: {JSON.stringify(propTypes[key])}</div>)
+              Object.keys(propTypes).map(key => (
+                <div key={key}>{key}: {JSON.stringify(propTypes[key])}</div>
+              ))
             }
           </div>
         </Dialog>
