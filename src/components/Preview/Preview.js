@@ -46,7 +46,7 @@ export default class Preview extends Component {
    */
   render() {
 
-    const { description, children } = this.props;
+    const { description, children, aside } = this.props;
     const C = children.type;
 
     return (
@@ -62,6 +62,9 @@ export default class Preview extends Component {
         </div>
         <div style={styles.divider} />
         <PropsChange propTypes={children.type.__PT__} props={this.state.props} onPropsChange={this.onPropsChange} />
+        <div>
+          {aside}
+        </div>
         <PropTypesList propTypes={children.type.__PT__} />
       </Skin>
     );
