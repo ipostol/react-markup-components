@@ -40,7 +40,7 @@ export default class PropTypesList extends Component {
         >
           <div>
             {
-              Object.keys(propTypes).map(key => (
+              propTypes && Object.keys(propTypes).map(key => (
                 <div key={key}>{key}: {JSON.stringify(propTypes[key])}</div>
               ))
             }
