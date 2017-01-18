@@ -23,8 +23,8 @@ export const styles = {
   },
 };
 
-const Skin = ({ children, ...rest }) => (
-  <div style={styles.general} {...rest}>
+const Skin = ({ children, style, ...rest }) => (
+  <div style={{ ...styles.general, ...style }} {...rest}>
     <div style={styles.content}>
       {
         children

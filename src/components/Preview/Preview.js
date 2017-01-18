@@ -69,11 +69,11 @@ export default class Preview extends Component {
    */
   render() {
 
-    const { description, children, aside, haveTheme } = this.props;
+    const { description, children, aside, haveTheme, skinStyle } = this.props;
     const C = children.type;
 
     return (
-      <Skin>
+      <Skin style={skinStyle}>
         {
           description && <Description>{description}</Description>
         }
