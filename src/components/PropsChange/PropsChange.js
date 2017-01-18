@@ -60,6 +60,20 @@ export default class PropsChange extends Component {
         />
       );
 
+    } else if (type === 'object') {
+
+      return (
+        <TextField
+          hintText={field}
+          value={JSON.stringify(value) || ''}
+          onChange={(e, value) => onPropsChange(field, JSON.parse(value))}
+        />
+      );
+
+    } else if (type === 'function') {
+
+      return null;
+
     } else {
 
       return (
