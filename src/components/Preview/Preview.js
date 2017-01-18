@@ -80,7 +80,7 @@ export default class Preview extends Component {
           <C {...this.state.props} />
         </div>
         <div style={{ ...styles.layer, backgroundColor: DARK_COLOR }}>
-          <C {...this.state.props} />
+          <C {...this.state.props} isDark />
         </div>
         <div style={styles.divider} />
         <div style={styles.flex}>
