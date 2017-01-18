@@ -60,7 +60,7 @@ export default class PropsChange extends Component {
         />
       );
 
-    } else if (type === 'object') {
+    } else if (type === 'object' || type === 'array') {
 
       return (
         <TextField

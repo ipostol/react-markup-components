@@ -36,6 +36,7 @@ export default class Preview extends Component {
   static propTypes = {
     description: PropTypes.string,
     children: PropTypes.node,
+    haveTheme: PropTypes.bool,
   };
 
   constructor(props) {
@@ -68,7 +69,7 @@ export default class Preview extends Component {
    */
   render() {
 
-    const { description, children, aside } = this.props;
+    const { description, children, aside, haveTheme } = this.props;
     const C = children.type;
 
     return (
@@ -79,9 +80,12 @@ export default class Preview extends Component {
         <div style={{ ...styles.layer, backgroundColor: LIGHT_COLOR }}>
           <C {...this.state.props} />
         </div>
-        <div style={{ ...styles.layer, backgroundColor: DARK_COLOR }}>
-          <C {...this.state.props} isDark />
-        </div>
+        {
+          haveTheme &&
+          <div style={{ ...styles.layer, backgroundColor: DARK_COLOR }}>
+            <C {...this.state.props} isDark />
+          </div>
+        }
         <div style={styles.divider} />
         <div style={styles.flex}>
           <PropsChange propTypes={children.type.propList} props={this.state.props} onPropsChange={this.onPropsChange} />
