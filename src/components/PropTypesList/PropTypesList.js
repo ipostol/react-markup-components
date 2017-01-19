@@ -23,6 +23,12 @@ export default class PropTypesList extends Component {
 
     const { propTypes, ...rest } = this.props;
 
+    if (!propTypes || !Object.keys(propTypes).length) {
+
+      return null;
+
+    }
+
     return (
       <div style={styles.general}{...rest}>
         <RaisedButton label="show props" primary onClick={this.handleOpen} />
@@ -40,7 +46,7 @@ export default class PropTypesList extends Component {
         >
           <div>
             {
-              propTypes && Object.keys(propTypes).map(key => (
+              Object.keys(propTypes).map(key => (
                 <div key={key}>{key}: {JSON.stringify(propTypes[key])}</div>
               ))
             }
