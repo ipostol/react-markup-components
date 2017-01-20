@@ -25,6 +25,19 @@ export const styles = {
   aside: {
     margin: '20px',
   },
+  full: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+  },
+  fullButton: {
+    position: 'fixed',
+    bottom: '5px',
+    right: '5px',
+    borderRadius: '5px',
+  },
 };
 
 /**
@@ -43,6 +56,7 @@ export default class Preview extends Component {
     super();
     this.state = {
       props: props.children.props,
+      full: false,
     };
   }
 
@@ -64,6 +78,10 @@ export default class Preview extends Component {
 
   onPropsChange = (field, value) => this.setState({ props: { ...this.state.props, [field]: value } });
 
+  offFullMode = () => this.setState({ full: false });
+
+  onFullMode = () => this.setState({ full: true });
+
   /**
    * @return {ReactElement}
    */
@@ -71,6 +89,17 @@ export default class Preview extends Component {
 
     const { description, children, aside, haveTheme, skinStyle } = this.props;
     const C = children.type;
+
+    if (this.state.full) {
+
+      return (
+        <div style={styles.full}>
+          <C {...this.state.props} />
+          <button style={styles.fullButton} onClick={this.offFullMode}>Off full mode</button>
+        </div>
+      );
+
+    }
 
     return (
       <Skin style={skinStyle}>
@@ -94,6 +123,7 @@ export default class Preview extends Component {
           </div>
         </div>
         <PropTypesList propTypes={children.type.propList} />
+        <button style={styles.fullButton} onClick={this.onFullMode}>On full mode</button>
       </Skin>
     );
 
