@@ -13,6 +13,9 @@ export const styles = {
   toggleField: {
     margin: '20px 0',
   },
+  button: {
+    borderRadius: '5px',
+  },
 };
 
 export default class PropsChange extends Component {
@@ -72,7 +75,8 @@ export default class PropsChange extends Component {
             multiLine
             onChange={(e, value) => this.setState({ [field]: value })}
           />
-          <button onClick={() => onPropsChange(field, JSON.parse(this.state[field]))}>click</button>
+
+          <button style={styles.button} onClick={() => onPropsChange(field, JSON.parse(this.state[field]))}>set</button>
         </div>
       );
 
