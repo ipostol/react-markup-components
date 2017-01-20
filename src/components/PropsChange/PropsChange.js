@@ -13,9 +13,14 @@ export const styles = {
   toggleField: {
     margin: '20px 0',
   },
+  button: {
+    borderRadius: '5px',
+  },
 };
 
 export default class PropsChange extends Component {
+
+  state = {};
 
   static propTypes = {
     propTypes: PropTypes.object,
@@ -63,12 +68,16 @@ export default class PropsChange extends Component {
     } else if (type === 'object' || type === 'array') {
 
       return (
-        <TextField
-          hintText={field}
-          value={JSON.stringify(value) || ''}
-          multiLine
-          onChange={(e, value) => onPropsChange(field, JSON.parse(value))}
-        />
+        <div>
+          <TextField
+            hintText={field}
+            value={this.state[field] === undefined ? JSON.stringify(value) || '' : this.state[field]}
+            multiLine
+            onChange={(e, value) => this.setState({ [field]: value })}
+          />
+
+          <button style={styles.button} onClick={() => onPropsChange(field, JSON.parse(this.state[field]))}>set</button>
+        </div>
       );
 
     } else if (type === 'function') {
