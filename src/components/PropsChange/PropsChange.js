@@ -17,6 +17,8 @@ export const styles = {
 
 export default class PropsChange extends Component {
 
+  state = {};
+
   static propTypes = {
     propTypes: PropTypes.object,
     props: PropTypes.object,
@@ -65,9 +67,16 @@ export default class PropsChange extends Component {
       return (
         <TextField
           hintText={field}
-          value={JSON.stringify(value) || ''}
+          value={JSON.stringify(this.state[field] || value) || ''}
           multiLine
-          onChange={(e, value) => onPropsChange(field, JSON.parse(value))}
+          onChange={(e, value) => {
+            try {
+              onPropsChange(field, JSON.parse(value));
+              this.setState({ [field]: null });
+            } catch (e) {
+              this.setState({ [field]: value });
+            }
+          }}
         />
       );
 
