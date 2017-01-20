@@ -73,7 +73,9 @@ export default class PropsChange extends Component {
             try {
               onPropsChange(field, JSON.parse(value));
               this.setState({ [field]: null });
+              console.log('try');
             } catch (e) {
+              console.log('catch');
               this.setState({ [field]: value });
             }
           }}
