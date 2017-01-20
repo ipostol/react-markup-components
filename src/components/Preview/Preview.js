@@ -82,12 +82,37 @@ export default class Preview extends Component {
 
   onFullMode = () => this.setState({ full: true });
 
+  checkTheme() {
+
+    const { defaultTheme, haveTheme } = this.props;
+
+    if (haveTheme) {
+
+      return [
+        <div style={{ ...styles.layer, backgroundColor: LIGHT_COLOR }} key="light">
+          <C {...this.state.props} />
+        </div>,
+        <div style={{ ...styles.layer, backgroundColor: DARK_COLOR }} key="dark">
+          <C {...this.state.props} isDark />
+        </div>
+      ];
+
+    }
+
+    return (
+      <div style={{ ...styles.layer, backgroundColor: defaultTheme === 'dark' ? DARK_COLOR : LIGHT_COLOR }}>
+        <C {...this.state.props} isDark={defaultTheme === 'dark'} />
+      </div>
+    );
+
+  }
+
   /**
    * @return {ReactElement}
    */
   render() {
 
-    const { description, children, aside, haveTheme, skinStyle } = this.props;
+    const { description, children, aside, skinStyle } = this.props;
     const C = children.type;
 
     if (this.state.full) {
@@ -106,14 +131,8 @@ export default class Preview extends Component {
         {
           description && <Description>{description}</Description>
         }
-        <div style={{ ...styles.layer, backgroundColor: LIGHT_COLOR }}>
-          <C {...this.state.props} />
-        </div>
         {
-          haveTheme &&
-          <div style={{ ...styles.layer, backgroundColor: DARK_COLOR }}>
-            <C {...this.state.props} isDark />
-          </div>
+          this.checkTheme()
         }
         <div style={styles.divider} />
         <div style={styles.flex}>
