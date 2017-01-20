@@ -84,7 +84,8 @@ export default class Preview extends Component {
 
   checkTheme() {
 
-    const { defaultTheme, haveTheme } = this.props;
+    const { defaultTheme, haveTheme, children } = this.props;
+    const C = children.type;
 
     if (haveTheme) {
 
