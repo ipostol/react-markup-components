@@ -67,7 +67,7 @@ export default class PropsChange extends Component {
       return (
         <TextField
           hintText={field}
-          value={JSON.stringify(this.state[field] || value) || ''}
+          value={this.state[field] || JSON.stringify(value) || ''}
           multiLine
           onChange={(e, value) => {
             try {
