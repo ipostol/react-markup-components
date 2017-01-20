@@ -65,21 +65,15 @@ export default class PropsChange extends Component {
     } else if (type === 'object' || type === 'array') {
 
       return (
-        <TextField
-          hintText={field}
-          value={this.state[field] || JSON.stringify(value) || ''}
-          multiLine
-          onChange={(e, value) => {
-            try {
-              onPropsChange(field, JSON.parse(value));
-              this.setState({ [field]: null });
-              console.log('try');
-            } catch (e) {
-              console.log('catch');
-              this.setState({ [field]: value });
-            }
-          }}
-        />
+        <div>
+          <TextField
+            hintText={field}
+            value={this.state[field] || JSON.stringify(value) || ''}
+            multiLine
+            onChange={(e, value) => this.setState({ [field]: value })}
+          />
+          <button onClick={() => onPropsChange(field, JSON.parse(this.state[field]))}>click</button>
+        </div>
       );
 
     } else if (type === 'function') {
