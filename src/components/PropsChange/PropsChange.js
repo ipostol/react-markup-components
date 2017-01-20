@@ -15,6 +15,7 @@ export const styles = {
   },
   button: {
     borderRadius: '5px',
+    marginLeft: '3px',
   },
 };
 
