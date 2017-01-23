@@ -83,7 +83,7 @@ export default class PropsChange extends Component {
             hintText={field}
             value={this.state[field] === undefined ? JSON.stringify(value, null, '  ') || '' : this.state[field]}
             multiLine
-            style={textFieldWidth}
+            style={styles.textFieldWidth}
             rowsMax={8}
             onChange={(e, value) => this.setState({ [field]: value })}
           />
