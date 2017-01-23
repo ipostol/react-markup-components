@@ -9,6 +9,7 @@ import MenuItem from 'material-ui/MenuItem';
 export const styles = {
   general: {
     margin: '20px 0',
+    width: '50%',
   },
   toggleField: {
     margin: '20px 0',
@@ -16,6 +17,14 @@ export const styles = {
   button: {
     borderRadius: '5px',
     marginLeft: '3px',
+    height: '25px',
+  },
+  textFieldDiv: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  textFieldWidth: {
+    width: 'calc(100% - 45px)',
   },
 };
 
@@ -69,11 +78,12 @@ export default class PropsChange extends Component {
     } else if (type === 'object' || type === 'array') {
 
       return (
-        <div>
+        <div style={styles.textFieldDiv}>
           <TextField
             hintText={field}
-            value={this.state[field] === undefined ? JSON.stringify(value) || '' : this.state[field]}
+            value={this.state[field] === undefined ? JSON.stringify(value, null, '  ') || '' : this.state[field]}
             multiLine
+            style={textFieldWidth}
             rowsMax={8}
             onChange={(e, value) => this.setState({ [field]: value })}
           />

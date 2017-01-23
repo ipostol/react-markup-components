@@ -24,6 +24,7 @@ export const styles = {
   },
   aside: {
     margin: '20px',
+    width: '50%',
   },
   full: {
     position: 'absolute',
