@@ -100,9 +100,19 @@ export default class Preview extends Component {
 
     }
 
+    if (defaultTheme === 'dark') {
+
+      return (
+        <div style={{ ...styles.layer, backgroundColor: DARK_COLOR }}>
+          <C {...this.state.props} isDark />
+        </div>
+      );
+
+    }
+
     return (
-      <div style={{ ...styles.layer, backgroundColor: defaultTheme === 'dark' ? DARK_COLOR : LIGHT_COLOR }}>
-        <C {...this.state.props} isDark={defaultTheme === 'dark'} />
+      <div style={{ ...styles.layer, backgroundColor: LIGHT_COLOR }}>
+        <C {...this.state.props} />
       </div>
     );
 
